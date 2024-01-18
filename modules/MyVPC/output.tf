@@ -9,3 +9,4 @@ output "Output_TheVPC_Resource_Public_Subnet_ID" {
 output "TheVPC_ID" {
   value = aws_vpc.TheVPC_Resource.id
 }
+

@@ -24,7 +24,7 @@ module "TheEC2" {
 module "TheEC2-SG" {
   source = "./modules/MyEC2-SG"
   EC2_SG_VPC_ID = module.TheVPC.TheVPC_ID
-
+  
 }
 
 module "TheLB" {
