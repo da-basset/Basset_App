@@ -24,7 +24,7 @@ module "TheEC2" {
 module "TheEC2-SG" {
   source = "./modules/MyEC2-SG"
   EC2_SG_VPC_ID = module.TheVPC.TheVPC_ID
-  
+  EC2_Public_SG_VPC_CIDR_Block = module.TheVPC.Output_TheVPC_Resource_Public_Subnet_CIDR_Block
 }
 
 module "TheLB" {

@@ -2,8 +2,8 @@ output "Output_TheVPC_Resource_Private_Subnet_ID" {
     value = aws_subnet.TheVPC_Resource_Private_Subnet.id
 }
 
-output "Output_TheVPC_Resource_Public_Subnet_ID" {
-    value = aws_subnet.TheVPC_Resource_Public_Subnet.id
+output "Output_TheVPC_Resource_Public_Subnet_CIDR_Block" {
+    value = aws_subnet.TheVPC_Resource_Public_Subnet.cidr_block
 }
 
 output "TheVPC_ID" {

@@ -3,3 +3,7 @@ variable "EC2_SG_VPC_ID" {
   type = string
 }
 
+variable "EC2_Public_SG_VPC_CIDR_Block" {
+  description = "Grab the Public Subnet from the VPC module"
+  type = string
+}

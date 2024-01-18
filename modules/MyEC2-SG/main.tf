@@ -14,7 +14,7 @@ resource "aws_security_group_rule" "SG_EC2_Inbound_Rule" {
   from_port = 0
   to_port = 0
   protocol = "-1"
-  cidr_blocks = ["0.0.0.0/0"]
+  cidr_blocks = [var.EC2_Public_SG_VPC_CIDR_Block]
 }
 
 resource "aws_security_group_rule" "SG_EC2_Outbound_Rule" {
