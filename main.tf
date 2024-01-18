@@ -18,6 +18,7 @@ module "TheEC2" {
   EC2_SG_ID = module.TheEC2-SG.Output_EC2_SG_ID
   // Add Variable for EC2 Name
   
+  depends_on = [ module.TheInternetGateway ]
 
 }
 
@@ -29,6 +30,7 @@ module "TheEC2-SG" {
 
 module "TheLB" {
   source = "./modules/MyLB"
+  Public_Subnet_ID = module.TheVPC.Public_Subnet_ID
   
 }
 
@@ -36,4 +38,9 @@ module "TheVPC" {
   source = "./modules/MyVPC"
   // Add Variable for VPC Name
   
+}
+
+module "TheInternetGateway" {
+  source = "./modules/MyInternetGateway"
+  Internet_Gateway = module.TheVPC.TheVPC_ID
 }

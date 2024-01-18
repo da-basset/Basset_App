@@ -1,8 +1,11 @@
-//resource "aws_elb" "name" {
-//  name = "MyApp-LB"
-//  subnets = var.LB_List_Subnet
-//  availability_zones = [ "us_west_2b" ]
-//  listener {
-//    instance_port = 
-//  }
-//}
+resource "aws_elb" "TheELB_Resource" {
+  
+  listener {
+    instance_port = 80
+    instance_protocol = "http"
+    lb_port = 80
+    lb_protocol = "http"
+  }
+
+  subnets = [var.Public_Subnet_ID]
+}
