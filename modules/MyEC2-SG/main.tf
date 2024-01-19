@@ -17,6 +17,15 @@ resource "aws_security_group_rule" "SG_EC2_Inbound_Rule" {
   cidr_blocks = [var.EC2_Public_SG_VPC_CIDR_Block]
 }
 
+resource "aws_security_group_rule" "SG_EC2_SSH_Rule" {
+  security_group_id = aws_security_group.MyEC2_SG_Resource.id
+  type = "ingress"
+  from_port = 22
+  to_port = 22
+  protocol = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
 resource "aws_security_group_rule" "SG_EC2_Outbound_Rule" {
   security_group_id = aws_security_group.MyEC2_SG_Resource.id
   type = "egress"
