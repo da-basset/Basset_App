@@ -7,6 +7,9 @@ module "TheDB" {
 
   DB_Name = var.Name_Of_DB
   DB_Username = var.Username_Of_DB
+  //DB_Subnet = module.TheVPC.Public_Subnet_ID
+  DB_subnet_group_public_subnet_id = module.TheVPC.Public_Subnet_ID
+  DB_subnet_group_private_subnet_id = module.TheVPC.Private_Subnet_ID
 }
 
 module "TheEC2" {
