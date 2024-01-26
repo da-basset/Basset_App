@@ -13,5 +13,10 @@ resource "aws_db_instance" "TheDB_Resource" {
 
 resource "aws_db_subnet_group" "TheDB_Subnet_Group" {
   name = "bassetapp"
-  subnet_ids = [ var.DB_subnet_group_public_subnet_id, var.DB_subnet_group_private_subnet_id ]
+  subnet_ids = [ 
+    var.DB_subnet_group_public_subnet_id, 
+    var.DB_subnet_group_private_subnet_id,
+    var.DB_subnet_group_public_subnet_id_2, 
+    var.DB_subnet_group_private_subnet_id_2,
+    ]
 }

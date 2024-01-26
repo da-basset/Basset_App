@@ -2,7 +2,8 @@ resource "aws_instance" "TheEC2_Resource" {
   instance_type = "t2.micro"
   key_name = "TopLevel"
   ami = "ami-0944e91aed79c721c" //Amazon Linux AMI 64-86bit
-  subnet_id = var.EC2_Instance_Private_DNS
+  //subnet_id = var.EC2_Instance_Private_DNS
+  subnet_id = var.EC2_instance_public_subnet
   vpc_security_group_ids = [ var.EC2_SG_ID ]
   // Connect LB somehow.
   

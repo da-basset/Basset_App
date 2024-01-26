@@ -19,3 +19,13 @@ variable "DB_subnet_group_private_subnet_id" {
   description = "The variable to set the database private subnet id"
   type = string
 }
+
+variable "DB_subnet_group_public_subnet_id_2" {
+  description = "The variable to set the database public subnet id AZ 2"
+  type = string
+}
+
+variable "DB_subnet_group_private_subnet_id_2" {
+  description = "The variable to set the database private subnet id AZ 2"
+  type = string
+}

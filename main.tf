@@ -10,6 +10,8 @@ module "TheDB" {
   //DB_Subnet = module.TheVPC.Public_Subnet_ID
   DB_subnet_group_public_subnet_id = module.TheVPC.Public_Subnet_ID
   DB_subnet_group_private_subnet_id = module.TheVPC.Private_Subnet_ID
+  DB_subnet_group_public_subnet_id_2 = module.TheVPC.Private_Subnet_ID_2
+  DB_subnet_group_private_subnet_id_2 = module.TheVPC.Public_Subnet_ID_2
 }
 
 module "TheEC2" {
@@ -17,8 +19,9 @@ module "TheEC2" {
   source = "./modules/MyEC2"
 
   EC2_Disk_Size = var.Disk_Size_Choice
-  EC2_Instance_Private_DNS = module.TheVPC.Output_TheVPC_Resource_Private_Subnet_ID
   EC2_SG_ID = module.TheEC2-SG.Output_EC2_SG_ID
+  EC2_instance_public_subnet = module.TheVPC.Output_TheVPC_Resource_Public_Subnet_ID
+  //EC2_Instance_Private_DNS = module.TheVPC.Output_TheVPC_Resource_Private_Subnet_ID
   // Add Variable for EC2 Name
   
   depends_on = [ module.TheInternetGateway ]
