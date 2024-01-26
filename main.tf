@@ -21,7 +21,7 @@ module "TheEC2" {
   EC2_Disk_Size = var.Disk_Size_Choice
   EC2_SG_ID = module.TheEC2-SG.Output_EC2_SG_ID
   EC2_instance_public_subnet = module.TheVPC.Output_TheVPC_Resource_Public_Subnet_ID
-  //EC2_Instance_Private_DNS = module.TheVPC.Output_TheVPC_Resource_Private_Subnet_ID
+  EC2_Instance_Private_subnet = module.TheVPC.Output_TheVPC_Resource_Private_Subnet_ID
   // Add Variable for EC2 Name
   
   depends_on = [ module.TheInternetGateway ]
