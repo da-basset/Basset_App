@@ -3,7 +3,7 @@ resource "aws_instance" "TheEC2_Resource" {
   key_name = "TopLevel"
   ami = "ami-0944e91aed79c721c" //Amazon Linux AMI 64-86bit
 
-  subnet_id = var.EC2_Instance_Private_subnet
+  subnet_id = var.EC2_instance_private_subnet_2
   vpc_security_group_ids = [ var.EC2_SG_ID ]
   
   ebs_block_device {
@@ -20,6 +20,6 @@ resource "aws_instance" "TheEC2_Resource" {
 
   tags = {
     //name = "The App EC2 instance with EBS"
-    name = "The App EC2 instance with EBS #1"
+    name = "The App EC2 instance with EBS #2"
   }
 }

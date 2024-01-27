@@ -8,12 +8,12 @@ variable "EC2_SG_ID" {
   type = string
 }
 
-variable "EC2_instance_public_subnet" {
-  description = "The Public Subnet for the EC2"
+variable "EC2_instance_public_subnet_2" {
+  description = "The Public Subnet for the EC2 #2"
   type = string
 }
 
-variable "EC2_Instance_Private_subnet" {
-  description = "EC2 Module Variable for EC2 instance private DNS"
+variable "EC2_instance_private_subnet_2" {
+  description = "The private Subnet for the EC2 #2"
   type = string
-} 
+}
