@@ -46,7 +46,15 @@ module "TheEC2-SG" {
 module "TheLB" {
   source = "./modules/MyLB"
   Public_Subnet_ID = module.TheVPC.Public_Subnet_ID
-  
+  LB-SG = module.TheLB-SG.Output_LB_SG_ID
+  Public_subnet_1 = module.TheVPC.Public_Subnet_ID
+  Public_subnet_2 = module.TheVPC.Public_Subnet_ID_2
+}
+
+module "TheLB-SG" {
+  source = "./modules/MyLB-SG"
+  LB_SG_VPC_ID = module.TheVPC.TheVPC_ID
+  LB_Public_SG_VPC_CIDR_Block = module.TheVPC.Output_TheVPC_Resource_Public_Subnet_CIDR_Block
 }
 
 module "TheVPC" {
