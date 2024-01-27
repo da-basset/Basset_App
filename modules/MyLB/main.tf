@@ -12,3 +12,14 @@ resource "aws_lb_target_group" "LB-TG" {
   port = 80
   vpc_id = var.VPC_ID
 }
+
+resource "aws_lb_listener" "LB-Listner-80" {
+  load_balancer_arn = aws_lb.TheALB_Resource.arn
+  port = 80
+  protocol = "HTTP"
+
+  default_action {
+    type = "forward"
+    target_group_arn = aws_lb_target_group.LB-TG.arn
+  }
+}
